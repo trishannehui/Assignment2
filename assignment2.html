@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="assignment2.css">
+    <style>
+        body {
+            background-color: rgb(98, 115, 136);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+        }
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+        .note {
+            background-color: #8790a8;
+            color: #d0cae6;
+            padding: 10px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            width: 300px;
+            height: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+        .card:active {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+        .popup-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            border-radius: 10px;
+        }
+        .card:hover .popup-img {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#hobby">Hobby</a></li>
+            <li><a href="#crush">Crush</a></li>
+        </ul>
+    </nav>
+
+    <div class="note">
+        Note: Hover over each card to reveal an image. Click to enlarge the card.
+    </div>
+    
+    <section class="cards">
+        <div class="card" id="about">
+            <h2>About Me</h2>
+            <p>u're  not insane, neither am i.</p>
+            <img src="me.jpg" alt="About Me" class="popup-img">
+        </div>
+        <div class="card" id="hobby">
+            <h2>Hobby</h2>
+            <p>listening to music</p>
+            <img src="hobbyyy.jpg" alt="Hobby" class="popup-img">
+        </div>
+        <div class="card" id="crush">
+            <h2>Crush</h2>
+            <p>knows hapkido, likes horror stuff, and he sings</p>
+            <img src="krass.jpg" alt="Crush" class="popup-img">
+        </div>
+    </section>
+</body>
+</html>
